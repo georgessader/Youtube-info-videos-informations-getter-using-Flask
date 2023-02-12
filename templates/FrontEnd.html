@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			font-family: Verdana;
+		}
+		table,th,td{
+			border-collapse: collapse;
+			color: white;
+			border-style: solid;
+			border-color: white;
+			text-align: center;
+			padding: 10px;
+			margin: auto;
+			margin-top: 10px;
+		}
+		th{
+			background-color: #0F4E9F;
+		}
+		td{
+			background-color: #2967B0;
+		}
+		form{
+			border-style: solid;
+			border-radius: 15px;
+			width: 500px;
+			padding: 15px;
+			margin: auto;
+			margin-bottom: 5px;
+			background-color: #E7F7F6;
+		}
+		#inpp{
+			width: 97%;
+			padding: 6px;
+			border-style: solid;
+			border-radius: 6px;
+			border-width: 1px;
+			margin: auto;
+			text-align: center;
+		}
+		#sbutton{
+			width: 60%;
+			padding: 6px;
+			border-style: solid;
+			border-radius: 6px;
+			border-width: 1px;
+			margin: auto;
+			background-color: #0F4E9F;
+			color: white;
+			font-weight: bold;
+			display: block;
+		}
+		#divOrd{
+			width: fit-content;
+			text-align: center;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<form method="POST">
+		<input type="text" name="search" id="inpp">
+		<div id="divOrd">
+			<p>Order:</p>
+			<input type="radio" name="order" value="date">Date
+			<input type="radio" name="order" value="relevance" checked>Relevance
+			<input type="radio" name="order" value="viewCount">View Count
+		</div>
+		
+		<br><input type="submit" value="Search" id="sbutton">
+	</form>
+	
+	<table border="1">
+		<tr><th>Titles</th></tr>
+		{% for i in titles %}
+			<tr><td>{{i}}</td></tr>
+		{% endfor %}
+	</table>
+
+	<table border="1">
+		<tr><th>Descriptions</th></tr>
+		{% for i in descriptions %}
+			<tr><td>{{i}}</td></tr>
+		{% endfor %}
+	</table>
+
+	<table border="1">
+		<tr><th>Tags</th></tr>
+		{% for i in tags %}
+			<tr><td>{{i}}</td></tr>
+		{% endfor %}
+	</table>
+
+	<table border="1">
+		<tr><th>Tags</th></tr>
+		{% for i in d1I %}
+			<tr><td>{{i}}</td></tr>
+		{% endfor %}
+	</table>
+
+	<table border="1">
+		<tr><th>Tags</th></tr>
+		{% for i in ddI %}
+			<tr><td>{{i}}</td></tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
+
